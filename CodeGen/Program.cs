@@ -46,7 +46,7 @@ namespace CodeGen
             ReadInput(args);
             stopwatch.Stop();
             Console.WriteLine();
-            Console.WriteLine("Time elapsed: {0}s", stopwatch.ElapsedMilliseconds / 1000);
+            Console.WriteLine("Time elapsed: {0}ms", stopwatch.ElapsedMilliseconds);
             Console.WriteLine();
             Console.WriteLine("Press any key to exit. Do you know where it is?");
             Console.ReadKey();
@@ -99,7 +99,7 @@ namespace CodeGen
           
             var pattern = new StringBuilder(args[1].PadRight(Convert.ToInt32(args[0]), 'l'));
             
-            string password = string.Empty;
+            var password = new StringBuilder(string.Empty);
             while (pattern.Length > 0)
             {
                 var patternPosition = pattern.Length - 1;
@@ -107,16 +107,16 @@ namespace CodeGen
                 switch (pattern[patternPosition])
                 {
                     case 'l':
-                        password += WriteRandomLowerCaseLetter();
+                        password.Append(WriteRandomLowerCaseLetter());
                         break;
                     case 'L':
-                        password += WriteRandomUpperCaseLetter();
+                        password.Append(WriteRandomUpperCaseLetter());
                         break;
                     case 's':
-                        password += WriteRandomSpecialCharacter();
+                        password.Append(WriteRandomSpecialCharacter());
                         break;
                     case 'd':
-                        password += WriteRandomDigit();
+                        password.Append(WriteRandomDigit());
                         break;
                     default:
                         return;
@@ -126,7 +126,7 @@ namespace CodeGen
             }
             Console.WriteLine();
             //Console.WriteLine(password);
-            WriteToFile.SaveToFile(password);
+            WriteToFile.SaveToFile(password.ToString());
         }
 
    
