@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
+
 
 
 namespace CodeGen
@@ -12,10 +10,10 @@ namespace CodeGen
     {
         public static void SaveToFile(string password)
         {
-            var dir = @"C:\Users\TrymKBjørnvik\Documents\Test\password.txt";
+            var dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\password.txt";
             File.WriteAllText(dir, password + Environment.NewLine);
             Console.WriteLine();
-            Console.WriteLine("Password saved to " + dir );
+            Console.WriteLine("Password saved to " + dir);
         }
     }
 }
