@@ -1,12 +1,15 @@
 ﻿using System;
 
 using System.Diagnostics;
+using System.Net.Mime;
+using System.Threading;
+using System.Xml;
 
 namespace CodeGen
 {
     class Program
     {
-        static void Main(string[] args)
+       public static void Main(string[] args)
         {
             if (args.Length == 0)
             {
@@ -27,11 +30,13 @@ namespace CodeGen
 
                 //}
             }
+          
             Stopwatch stopwatch = new Stopwatch();
             if (!Validation.IsValid(args))
             {
                 OutputHandling.ShowHelpText();
-                return;
+               return;
+
             }
             stopwatch.Start();
             InputHandling.ReadInput(args);
@@ -40,15 +45,6 @@ namespace CodeGen
             Console.WriteLine("\n\rPress any key to exit. Do you know where it is?");
             Console.ReadKey();
         }
-
-
-
-
-
-
-
-
-
 
     }
 }
