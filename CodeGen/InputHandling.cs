@@ -34,7 +34,6 @@ namespace CodeGen
                     default:
                         return;
                 }
-
                 pattern = pattern.Remove(patternPosition, 1);
             }
             Console.WriteLine();
