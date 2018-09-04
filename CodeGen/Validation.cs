@@ -1,10 +1,12 @@
-﻿namespace CodeGen
+﻿using static CodeGen.Checks;
+
+namespace CodeGen
 {
     class Validation
     {
         public static bool IsValid(string[] args)
         {
-            return args.Length == 2 && Checks.CheckNumber(args[0]) && CheckOptions(args[1]);
+            return args.Length == 2 && CheckNumber(args[0]) && CheckOptions(args[1]);
 
         }
 
