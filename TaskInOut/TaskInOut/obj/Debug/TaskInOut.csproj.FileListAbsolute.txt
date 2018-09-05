@@ -1,0 +1,7 @@
+C:\Users\TrymKBjørnvik\source\repos\TaskInOut\TaskInOut\bin\Debug\TaskInOut.exe.config
+C:\Users\TrymKBjørnvik\source\repos\TaskInOut\TaskInOut\bin\Debug\TaskInOut.exe
+C:\Users\TrymKBjørnvik\source\repos\TaskInOut\TaskInOut\bin\Debug\TaskInOut.pdb
+C:\Users\TrymKBjørnvik\source\repos\TaskInOut\TaskInOut\obj\Debug\TaskInOut.csprojAssemblyReference.cache
+C:\Users\TrymKBjørnvik\source\repos\TaskInOut\TaskInOut\obj\Debug\TaskInOut.csproj.CoreCompileInputs.cache
+C:\Users\TrymKBjørnvik\source\repos\TaskInOut\TaskInOut\obj\Debug\TaskInOut.exe
+C:\Users\TrymKBjørnvik\source\repos\TaskInOut\TaskInOut\obj\Debug\TaskInOut.pdb
