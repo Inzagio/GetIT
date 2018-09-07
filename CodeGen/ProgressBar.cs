@@ -4,6 +4,7 @@ using System.Threading;
 
 /// <summary>
 /// An ASCII progress bar
+/// Original source https://gist.github.com/DanielSWolf/0ab6a96899cc5377bf54
 /// </summary>
 public class ProgressBar : IDisposable, IProgress<double>
 {

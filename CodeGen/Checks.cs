@@ -44,5 +44,25 @@ namespace CodeGen
         {
             return Random.Next(5, 15);
         }
+        public static bool CheckOptions(string s)
+        {
+            foreach (var c in s)
+            {
+                switch (c)
+                {
+                    case 'l':
+                        break;
+                    case 'L':
+                        break;
+                    case 's':
+                        break;
+                    case 'd':
+                        break;
+                    default: return false;
+                }
+            }
+
+            return true;
+        }
     }
 }
