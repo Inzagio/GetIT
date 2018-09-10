@@ -6,13 +6,13 @@ using static CodeGen.Checks;
 namespace CodeGen
 {
     class InputHandling
-    {
-        public static void ReadInput(string[] args)
+    {   //This class handles the logic related to input
+        public static string ReadInput(string[] args)
         {
 
             int toInt32 = ToInt32(args[0]);
-            var pattern = new StringBuilder(args[1].PadRight(toInt32, 'l'));
 
+            var pattern = new StringBuilder(args[1].PadRight(toInt32, 'l'));
             var password = new StringBuilder(string.Empty);
             using(var progress = new ProgressBar())
             while (pattern.Length > 0)
@@ -33,14 +33,14 @@ namespace CodeGen
                     case 'd':
                         password.Append(WriteRandomDigit());
                         break;
-                    default:
-                        return;
-                }
+                 }
                 pattern = pattern.Remove(patternPosition, 1);
             }
-            WriteLine();
-            // Console.WriteLine(password);
-            WriteToFile.SaveToFile(password.ToString());
+            var pw = password.ToString();
+            WriteLine(pw);
+            WriteToFile.SaveToFile(pw);
+            return pw;
+            
         }
     }
 }
