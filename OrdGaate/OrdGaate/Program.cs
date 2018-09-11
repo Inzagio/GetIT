@@ -8,15 +8,19 @@ namespace OrdGaate
 {
     class Program
     {
+        private static readonly Random rnd = new Random();
+
         static void Main()
         {
+          
             var list = GetList();
             foreach (var words in list)
             {
-                if (words.Length > 7)
+                if (words.Length > 7 && words.Length <= 10 && !words.Contains('-'))
                 {
                     Console.WriteLine(words);
                 }
+                
             }
         }
 
