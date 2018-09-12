@@ -18,25 +18,14 @@ namespace OrdGaate
             {
                 if (words.Length > 7 && words.Length <= 10 && !words.Contains('-'))
                 {
-                    Console.WriteLine(words);
+                    //Console.WriteLine(words);
                 }
                 
             }
+
+            FindRandomWord(GetList());
         }
 
-        //private static string DisplayWords()
-        //{
-        //    List<string> lines = GetList();
-        //    var allWords = string.Empty;
-        //    IEnumerable<string> distinctWords = lines.Distinct();
-        //    foreach (string words in distinctWords)
-        //    {
-        //        allWords = words;
-
-        //    }
-        //    Console.WriteLine(allWords);
-        //    return allWords;
-        //}
 
         public static string[] GetList()
         {
@@ -54,6 +43,12 @@ namespace OrdGaate
 
             var allLines = lines.Distinct().ToArray();
             return allLines;
+        }
+
+        private static void FindRandomWord(string[] allLines)
+        {
+            var randomWord = allLines[rnd.Next(0, allLines.Length)];
+            Console.WriteLine(randomWord);
         }
     }
 }
