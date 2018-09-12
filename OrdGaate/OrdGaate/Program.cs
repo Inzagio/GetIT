@@ -8,22 +8,66 @@ namespace OrdGaate
 {
     class Program
     {
-        private static readonly Random rnd = new Random();
 
-        static void Main()
+        //static void Main(string[] args)
+        //{
+        //    var filePath = args.Length != 0 ? args[0] : "Ordliste.txt";
+
+        //    var completeDictionary = ReadInputs.ReadInput(filePath);
+
+        //    var dictionary = CheckLengthDictionary(completeDictionary);
+
+        //}
+
+        //public static string[] CheckLengthDictionary(string[] completeDictionary)
+        //{
+        //    var dictionary = new List<string>();
+        //    foreach (var words in dictionary)
+        //    {
+        //        if(words.Length > 7 && words.Length <= 10 && !words.Contains('-'))
+        //        {
+        //            dictionary.Add(words);
+        //        }
+        //    }
+        //    return dictionary.ToArray();
+        //}
+
+
+
+
+
+        private static readonly Random Rnd = new Random();
+
+        static void Main(string[] args)
         {
-          
-            var list = GetList();
-            foreach (var words in list)
+            DisplayList();
+        }
+
+        private static void DisplayList(string lastPart, string[] dictionaryFull)
+        {
+            var list = dictionaryFull;
+            //foreach (var words in list)
+            //{
+            //    if (words.Length > 7 && words.Length <= 10 && !words.Contains('-'))
+            //    {
+            //        var word = words;
+            //    }
+            //}
+
+            var stretchingYogaWord = string.Empty;
+
+            string randomWord = string.Empty;
+            while (!(randomWord.Length > 7 && randomWord.Length <= 10 && !randomWord.Contains('-')))
+                randomWord = FindRandomWord(list);
+            foreach (var word in list)
             {
-                if (words.Length > 7 && words.Length <= 10 && !words.Contains('-'))
+                if (word.Substring(0, lastPart.Length) == lastPart)
                 {
-                    //Console.WriteLine(words);
+                    stretchingYogaWord = word;
                 }
-                
             }
 
-            FindRandomWord(GetList());
+            Console.WriteLine(stretchingYogaWord);
         }
 
 
@@ -31,24 +75,31 @@ namespace OrdGaate
         {
             string path = "Ordliste.txt";
             List<string> lines = new List<string>();
+
             var reader = new StreamReader(path);
             using (reader)
             {
                 while (reader.Peek() >= 0)
                 {
-                    lines.Add(reader.ReadLine()?.Split('\t')[1]);
+                    var word = reader.ReadLine()?.Split('\t')[1];
+
+                    lines.Add(word);
                 }
 
             }
 
-            var allLines = lines.Distinct().ToArray();
-            return allLines;
+            var dictionaryFull = lines.Distinct().ToArray();
+            return dictionaryFull;
         }
 
-        private static void FindRandomWord(string[] allLines)
+        private static string FindRandomWord(string[] dictionaryFull)
         {
-            var randomWord = allLines[rnd.Next(0, allLines.Length)];
-            Console.WriteLine(randomWord);
+            var randomWord = dictionaryFull[Rnd.Next(0, dictionaryFull.Length)];
+
+            var lastPart = randomWord.Substring(randomWord.Length - 3);
+            return randomWord;
+            //Console.WriteLine(randomWord);
+            //Console.WriteLine(lastPartFirstWord);
         }
     }
 }
