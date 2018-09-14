@@ -8,40 +8,42 @@ namespace OrdGaate
 {
     class Program
     {
-
-        //static void Main(string[] args)
-        //{
-        //    var filePath = args.Length != 0 ? args[0] : "Ordliste.txt";
-
-        //    var completeDictionary = ReadInputs.ReadInput(filePath);
-
-        //    var dictionary = CheckLengthDictionary(completeDictionary);
-
-        //}
-
-        //public static string[] CheckLengthDictionary(string[] completeDictionary)
-        //{
-        //    var dictionary = new List<string>();
-        //    foreach (var words in dictionary)
-        //    {
-        //        if(words.Length > 7 && words.Length <= 10 && !words.Contains('-'))
-        //        {
-        //            dictionary.Add(words);
-        //        }
-        //    }
-        //    return dictionary.ToArray();
-        //}
-
-
-
-
-
         private static readonly Random Rnd = new Random();
 
         static void Main(string[] args)
         {
-            DisplayList();
+            var filePath = args.Length != 0 ? args[0] : "Ordliste.txt";
+
+            var completeDictionary = ReadInputs.ReadInput(filePath);
+
+            var dictionary = CheckLengthDictionary(completeDictionary);
+         
+
         }
+
+        public static string[] CheckLengthDictionary(string[] completeDictionary)
+        {
+            var dictionary = new List<string>();
+            foreach (var words in dictionary)
+            {
+                if (words.Length > 7 && words.Length <= 10 && !words.Contains('-'))
+                {
+                    dictionary.Add(words);
+                }
+            }
+            return dictionary.ToArray();
+        }
+
+
+
+
+
+       
+
+        //static void Main(string[] args)
+        //{
+        //    DisplayList();
+        //}
 
         private static void DisplayList(string lastPart, string[] dictionaryFull)
         {
@@ -61,7 +63,7 @@ namespace OrdGaate
                 randomWord = FindRandomWord(list);
             foreach (var word in list)
             {
-                if (word.Substring(0, lastPart.Length) == lastPart)
+                if (word.Substring(0, lastPart.Length -1) == lastPart)
                 {
                     stretchingYogaWord = word;
                 }
