@@ -7,25 +7,15 @@ namespace TrePåRad
     {
 
 
-        public static void Show()
+        public static void Show(BoardModel bm)
         {
-            /* Note:
-              * if (readInput == a2)
-              * a2 = "x";
-              */
-            BoardModel cell = new BoardModel();
-            DrawBoard(cell);
-        }
-
-        private static void DrawBoard(BoardModel cell)
-        {
+            Console.Clear();
             Console.WriteLine($"  a b c");
             Console.WriteLine(" ┌─────┐");
-            Console.WriteLine($"1│{cell.Content[0]} {cell.Content[1]} {cell.Content[2]}│");
-            Console.WriteLine($"2│{cell.Content[3]} {cell.Content[4]} {cell.Content[5]}│");
-            Console.WriteLine($"3│{cell.Content[6]} {cell.Content[7]} {cell.Content[8]}│");
+            Console.WriteLine($"1│{bm.Content[0]} {bm.Content[1]} {bm.Content[2]}│");
+            Console.WriteLine($"2│{bm.Content[3]} {bm.Content[4]} {bm.Content[5]}│");
+            Console.WriteLine($"3│{bm.Content[6]} {bm.Content[7]} {bm.Content[8]}│");
             Console.WriteLine(" └─────┘");
-          
         }
     }
 }
