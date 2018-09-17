@@ -7,10 +7,10 @@
         public bool CheckVictoryCondition(BoardModel bm)
         {
 
-            return CheckContent(bm, 0, 1, 2)
+            return    CheckContent(bm, 0, 1, 2)
                    || CheckContent(bm, 3, 4, 6)
                    || CheckContent(bm, 6, 7, 8)
-                   || CheckContent(bm, 0, 3, 6)
+                   || CheckContent(bm, 0, 3, 5)
                    || CheckContent(bm, 1, 4, 7)
                    || CheckContent(bm, 2, 5, 8)
                    || CheckContent(bm, 0, 4, 8)
