@@ -23,7 +23,7 @@
             var cell1 = bm.Content[contentIndex1];
             var cell2 = bm.Content[contentIndex2];
 
-            if (cell0 == ' ' || cell1 != cell0 || cell2 != cell0) return false;
+            if (cell0 == ' ' || cell1 != cell0 || cell2 != cell0) return false; 
 
             Winner = cell0 == 'x' ? "You" : "Computer";
             return true;
