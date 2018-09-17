@@ -20,24 +20,7 @@ namespace TrePåRad
         //public void ModelLogic()
         //{
         //    CheckVictoryCondition();
-        //}
-
-        private void CheckVictoryCondition()
-        {
-            if (Content[0] == 'x' && Content[1] == 'x' && Content[2] == 'x')
-            {
-                WriteLine("xDGrill");
-            }
-            if (Content[3] == ' ' && Content[4] == ' ' && Content[5] == ' ') { }
-            if (Content[6] == ' ' && Content[7] == ' ' && Content[8] == ' ') { }
-
-            if (Content[0] == ' ' && Content[3] == ' ' && Content[6] == ' ') { }
-            if (Content[1] == ' ' && Content[4] == ' ' && Content[7] == ' ') { }
-            if (Content[2] == ' ' && Content[5] == ' ' && Content[8] == ' ') { }
-
-            if (Content[0] == ' ' && Content[4] == ' ' && Content[8] == ' ') { }
-            if (Content[2] == ' ' && Content[4] == ' ' && Content[6] == ' ') { }
-        }
+   
 
         public void SetCross(string position)
         {
@@ -94,8 +77,9 @@ namespace TrePåRad
             {
                 randomCell = _random.Next(0, 9);
                 Thread.Sleep(5);
-            } while (Content[randomCell] != 'x');
+            } while (Content[randomCell] != ' ');
             Content[randomCell] = 'o';
+           
         }
     }
 }
