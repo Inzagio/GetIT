@@ -22,60 +22,21 @@ namespace TrePåRad
         public void SetCross(string position)
         {
             CheckCross();
-            if (position == "a1")
+
+            var col = (int)(position[0] - 'a');
+            var row = Convert.ToInt32(position[1].ToString()) - 1;
+            var index = col + row * 3;
+
+            if (Content[index] == ' ')
             {
-                if (Content[0] != 'o')
-                    Content[0] = 'x';
+                Content[index] = 'x';
             }
-            else if (position == "a2")
-            {
-                if (Content[3] != 'o')
-                    Content[3] = 'x';
-            }
-            else if (position == "a3")
-            {
-                if (Content[6] != 'o')
-                    Content[6] = 'x';
-            }
-            else if (position == "b1")
-            {
-                if (Content[1] != 'o')
-                    Content[1] = 'x';
-            }
-            else if (position == "b2")
-            {
-                if (Content[4] != 'o')
-                    Content[4] = 'x';
-            }
-            else if (position == "b3")
-            {
-                if (Content[7] != 'o')
-                    Content[7] = 'x';
-            }
-            else if (position == "c1")
-            {
-                if (Content[2] != 'o')
-                    Content[2] = 'x';
-            }
-            else if (position == "c2")
-            {
-                if (Content[5] != 'o')
-                    Content[5] = 'x';
-            }
-            else if (position == "c3")
-            {
-                if (Content[8] != 'o')
-                    Content[8] = 'x';
-            }
-            else
-            {
-                WriteLine("Error in input, check your string");
-            }
+            
         }
         public void CheckCross()
         {
-                if (Content.Contains('o'))
-                    WriteLine("Try somewhere else");
+            if (Content.Contains('o'))
+                WriteLine("Try somewhere else");
         }
 
         public void SetRandomCircle()
