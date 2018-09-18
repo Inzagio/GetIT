@@ -5,7 +5,7 @@ using RandomSquares;
 namespace TestStuff
 {
     [TestClass]
-    public class UnitTest1
+    public class TestScreenCell
     {
         [TestMethod]
         public void TestMethod1()

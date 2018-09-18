@@ -9,20 +9,44 @@
 
         public char GetCharacter()
         {
-            var returnValue = ' ';
+            //var returnValue = ' ';
 
-            if (Up && Down && Left && Right) returnValue = '┼';
-            if (Up && Down && Left && !Right) returnValue = '┤';
-            if (Up && Down && !Left && Right) returnValue = '├';
-            if (Up && Down && !Left && !Right) returnValue = '│';
-            if (Up && !Down && Left && Right) returnValue = '┴';
-            if (!Up && Down && Left && Right) returnValue = '┬';
-            if (!Up && !Down && Left && Right) returnValue = '─';
-            if (!Up && Down && !Left && Right) returnValue = '┘';
-            if (Up && !Down && !Left && Right) returnValue = '┐';
-            if (!Up && Down && Left && !Right) returnValue = '└';
-            if (Up && !Down && Left && !Right) returnValue = '┌';
-            return returnValue;
+            //if (Up && Down && Left && Right) return '┼';
+            //if (Up && Down && Left && !Right) return '┤';
+
+            //if (Up && Down && !Left && Right) return '├';
+            //if (Up && Down && !Left && !Right) return '│';
+
+            //if (Up && !Down && Left && Right) return '┴';
+            //if (!Up && Down && Left && Right) return '┬';
+
+            //if (!Up && !Down && Left && Right) return '─';
+
+            //if (Up && !Down && !Left && Right) return '┘';
+            //if (!Up && Down && !Left && Right) return '┐';
+
+            //if (Up && !Down && Left && !Right) return '└';
+            //if (!Up && Down && Left && !Right) return '┌';
+
+            //return ' ';
+
+            if (Up && Down && Left && Right) return '┼';
+            if (Up && Down && Left && !Right) return '┤';
+            if (Up && Down && !Left && Right) return '├';
+            if (Up && Down && !Left && !Right) return '│';
+            if (Up && !Down && Left && Right) return '┴';
+            if (Up && !Down && Left && !Right) return '┘';
+            if (Up && !Down && !Left && Right) return '└';
+            if (Up && !Down && !Left && !Right) return '╵';
+
+            if (!Up && Down && Left && Right) return '┬';
+            if (!Up && Down && Left && !Right) return '┐';
+            if (!Up && Down && !Left && Right) return '┌';
+            if (!Up && Down && !Left && !Right) return '╷';
+            if (!Up && !Down && Left && Right) return '─';
+            if (!Up && !Down && Left && !Right) return '╴';
+            if (!Up && !Down && !Left && Right) return '╶';
+            return ' ';
         }
 
         public void AddHorizontal()

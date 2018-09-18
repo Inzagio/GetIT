@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RandomSquares
 {
-    class ScreenRow
+   public class ScreenRow
     {
         private readonly ScreenCell[] _cells;
         private int _width;
@@ -15,9 +12,9 @@ namespace RandomSquares
         public ScreenRow(int width, int startX)
         {
             _cells = new ScreenCell[width + startX];
-            for (var index = 0; index < _cells.Length; index++) 
+            for (var index = 0; index < _cells.Length; index++)
             {
-               _cells[index] = new ScreenCell();
+                _cells[index] = new ScreenCell();
             }
         }
 
@@ -46,17 +43,20 @@ namespace RandomSquares
         public void AddMiddleRow(int startX, int width)
         {
             var endX = startX + width;
-            _cells[startX].AddUpperLeftCorner();
-            _cells[endX].AddUpperRightCorner();
-            for (var index = startX + 1; index < endX; index++)
-            {
-                _cells[index].AddVertical();
-            }
+            _cells[startX].AddVertical();
+            _cells[endX].AddVertical();
+            
         }
 
-        public void Show(int startX, int width)
+        public void Show()
         {
-            AddBottomRow(startX, width);
+            var output = new StringBuilder();
+            foreach (var cell in _cells)
+            {
+                output.Append(cell.GetCharacter());
+            }
+
+            Console.WriteLine(output);
         }
     }
 }
