@@ -6,10 +6,15 @@ namespace WorldOfConsoleCraft
     {
         public Character Character = new Character("Per Olson", 100, 1, 0, 0, 0, 100);
 
+        public int CalculateExp()
+        {
+            return CalculateExp(0);
+        }
+
         public int CalculateExp(int xp)
         {
             xp = Character.ExperiencePoints++;
-            //CheckIfLeveled();
+            CheckIfLeveled();
             return xp;
         }
 
