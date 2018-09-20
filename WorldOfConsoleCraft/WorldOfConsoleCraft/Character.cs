@@ -11,6 +11,7 @@ namespace WorldOfConsoleCraft
         public int PositionY { get; }
         public int ExperiencePoints { get; set; }
         public int XpToLevel { get; set; }
+        public int Damage { get; set; }
 
         public Character(string name)
         {
@@ -21,6 +22,8 @@ namespace WorldOfConsoleCraft
             PositionY = 0;
             ExperiencePoints = 0;
             XpToLevel = 100;
+            Damage = 0;
+
         }
         public int UpdateExperience()
         {

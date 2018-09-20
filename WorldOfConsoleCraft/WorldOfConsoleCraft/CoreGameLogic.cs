@@ -5,11 +5,15 @@ namespace WorldOfConsoleCraft
 {
     internal class CoreGameLogic
     {
-        public Character Character;
+      
 
+        public Character Character;
+        public CombatLogic CombatLogic;
+        
         public CoreGameLogic(Character character)
         {
             Character = character;
+            CombatLogic =  new CombatLogic(character);
         } 
 
         public int CalculateExp(int xp)
@@ -28,6 +32,8 @@ namespace WorldOfConsoleCraft
             }
         }
 
+     
+
         public  void StartGame()
         {
             var count = 0;
@@ -45,7 +51,7 @@ namespace WorldOfConsoleCraft
                 }
                 else
                 {
-                    Console.WriteLine("Wrong input!!");
+                    Console.WriteLine("Wrong input");
                 }
 
             }
