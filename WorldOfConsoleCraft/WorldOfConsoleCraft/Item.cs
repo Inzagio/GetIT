@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WorldOfConsoleCraft
 {
-    class Item
+    internal class Item
     {
         private string Name { get; }
         private bool Consumable { get; }

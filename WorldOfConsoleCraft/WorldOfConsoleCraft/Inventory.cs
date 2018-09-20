@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WorldOfConsoleCraft
 {
-    class Inventory
+    internal class Inventory
     {
         private string[] Slots { get; }
         private int MaxSlotVal { get; }
