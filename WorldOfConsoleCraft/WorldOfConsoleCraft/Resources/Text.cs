@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WorldOfConsoleCraft.Resources
+﻿namespace WorldOfConsoleCraft.Resources
 {
-    class Text
+    internal class Text
     {
-        public string AsciiIntro()
+
+
+        public static string[] Art =
         {
-          return @"            /`.                      
+            @"
+
+            /`.                      
            /   :.                        _
           /     \\                      | |
        ,;/,      ::              >>>>---: |>
@@ -29,7 +26,59 @@ namespace WorldOfConsoleCraft.Resources
      | | | |                            /|\
      | | |_`.                          / | \
      '--`                             /  |  \
-                                         '";
+                                         '",
+
+
+         @" 
+
+               /`.                      
+              /   :.                        _
+             /     \\                      | |
+          ,;/,      ::              >>>>---: |>
+      ___:c/.(      ||                     | |
+    ,'  _|:)>>>--,-'B)>                    | |
+   (  '---'\--'` _,'||                     | |
+    `--.    \ ,-'   ;;                     | |
+        |    \|    //                  ,>-.| |
+        |     \   ;'                  ^    |_|
+        |_____|\,'                          |
+        :     :                             |
+        |  ,  |                             |
+        | : \ :                             |
+        | | : :                             |
+        | | | |                            /|\
+        | | |_`.                          / | \
+        '--`                             /  |  \
+                                            '",
+
+            @" 
+
+                        /`.                      
+                       /   :.                        _
+                      /     \\                      | |
+                   ,;/,      ::              >>>>---: |>
+               ___:c/.(      ||                     | |
+             ,'  _|:)>>>--,-'B)>                    | |
+            (  '---'\--'` _,'||                     | |
+             `--.    \ ,-'   ;;                     | |
+                 |    \|    //                  ,>-.| |
+                 |     \   ;'                  ^    |_|
+                 |_____|\,'                          |
+                 :     :                             |
+                 |  ,  |                             |
+                 | : \ :                             |
+                 | | : :                             |
+                 | | | |                            /|\
+                 | | |_`.                          / | \
+                 '--`                             /  |  \
+                                                     '"
+
+        };
+
+        public string[] AsciiIntro()
+        {
+            return Art;
         }
     }
+
 }

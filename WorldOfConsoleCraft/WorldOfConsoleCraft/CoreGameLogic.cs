@@ -1,19 +1,20 @@
 ﻿using System;
+using System.Net.Mime;
 
 namespace WorldOfConsoleCraft
 {
-    class CoreGameLogic
+    internal class CoreGameLogic
     {
-        public Character Character = new Character("Per Olson", 100, 1, 0, 0, 0, 100);
+        public Character Character;
 
-        public int CalculateExp()
+        public CoreGameLogic(Character character)
         {
-            return CalculateExp(0);
-        }
+            Character = character;
+        } 
 
         public int CalculateExp(int xp)
         {
-            xp = Character.ExperiencePoints++;
+            xp = Character.UpdateExperience();
             CheckIfLeveled();
             return xp;
         }
@@ -23,11 +24,31 @@ namespace WorldOfConsoleCraft
             var xpToLevel = Character.XpToLevel;
             if (Character.ExperiencePoints == xpToLevel)
             {
-                Character.Level ++;
-                Console.WriteLine($"You are now level {Character.Level}");
-                Character.XpToLevel = xpToLevel * 2;
+                Character.LevelUp(xpToLevel);
             }
+        }
 
+        public  void StartGame()
+        {
+            var count = 0;
+            while (true)
+            {
+                if (Console.ReadKey(true).Key == ConsoleKey.K)
+                {
+                    Console.Clear();
+                    Console.WriteLine(Resources.Text.Art[count]);
+                    count++;
+                    if (count == Resources.Text.Art.Length) count = 0;
+                    CalculateExp(Character.ExperiencePoints);
+                    // Console.WriteLine($"{outputExp} Experience points gained - Need: {Character.XpToLevel} xp for next level");
+                    
+                }
+                else
+                {
+                    Console.WriteLine("Wrong input");
+                }
+
+            }
         }
     }
 }
