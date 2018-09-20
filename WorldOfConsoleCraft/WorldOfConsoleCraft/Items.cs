@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace WorldOfConsoleCraft
 {
-    internal class Items
+    internal class Items : Item
     {
-        private Item more = new Item();
-
-        public Items()
-        {
-            
-        }
+       
     }
 
 }
