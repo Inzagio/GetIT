@@ -11,12 +11,11 @@ namespace WorldOfConsoleCraft
             Write("Enter your name: ");
             var playerName = ReadLine();
             Clear();
-            var character = new Character($"{playerName}");
-            var coreGameLogic = new CoreGameLogic(character);
+            CoreGameLogic.Character = new Character($"{playerName}");
             var art = Text.Art;
             WriteLine(art[0]);
-            WriteLine($"Hello {character.Name}");
-            coreGameLogic.StartGame();
+            WriteLine($"Hello {CoreGameLogic.Character.Name}");
+            CoreGameLogic.StartGame();
         }
     }
 }

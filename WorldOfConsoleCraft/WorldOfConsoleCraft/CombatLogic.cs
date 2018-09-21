@@ -9,12 +9,7 @@ namespace WorldOfConsoleCraft
     class CombatLogic
     {
         public Character Character;
-        public Monster Monster;
-
-        public CombatLogic(Character player)
-        {
-            player = Character;
-        }
+        public static Monster Monster;
 
         private static Random random = new Random();
 
@@ -35,19 +30,19 @@ namespace WorldOfConsoleCraft
 
         }
 
-        public void HpCheck()
+        public static void HpCheck()
         {
-            var player = Character.HealthPoints;
+            var player = CoreGameLogic.Character.HealthPoints;
             var monster = Monster.HealthPoints;
 
             if (player == 0)
             {
-                Console.WriteLine($"{Character.Name} has died!");
+                Console.WriteLine($"{CoreGameLogic.Character.Name} has died!");
             }
 
             if (monster == 0)
             {
-                Console.WriteLine($"You killed a {Monster.Name}, you are awarded {Character.ExperiencePoints}");
+                Console.WriteLine($"You killed a {Monster.Name}, you are awarded {CoreGameLogic.Character.ExperiencePoints}");
             }
         }
     }

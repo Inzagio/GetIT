@@ -16,7 +16,7 @@ namespace WorldOfConsoleCraft
         public Character(string name)
         {
             Name = name;
-            HealthPoints = 100;
+               HealthPoints = 100;
             Level = 1;
             PositionX = 0;
             PositionY = 0;

@@ -7,23 +7,23 @@ namespace WorldOfConsoleCraft
     {
       
 
-        public Character Character;
-        public CombatLogic CombatLogic;
+        public static Character Character;
+       
         
-        public CoreGameLogic(Character character)
-        {
-            Character = character;
-            CombatLogic =  new CombatLogic(character);
-        } 
+        //public CoreGameLogic(Character character)
+        //{
+        //    Character = character;
+        //    CombatLogic =  new CombatLogic(character);
+        //} 
 
-        public int CalculateExp(int xp)
+        public static int CalculateExp(int ExperiencePoints)
         {
-            xp = Character.UpdateExperience();
+            ExperiencePoints = Character.UpdateExperience();
             CheckIfLeveled();
-            return xp;
+            return ExperiencePoints;
         }
 
-        public void CheckIfLeveled()
+        public static void CheckIfLeveled()
         {
             var xpToLevel = Character.XpToLevel;
             if (Character.ExperiencePoints == xpToLevel)
@@ -34,7 +34,7 @@ namespace WorldOfConsoleCraft
 
      
 
-        public  void StartGame()
+        public static void StartGame()
         {
             var count = 0;
             while (true)
