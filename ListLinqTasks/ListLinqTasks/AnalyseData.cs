@@ -1,30 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace ListLinqTasks
 {
    class AnalyseData
     {
-    //    private List list;
 
-    //    public AnalyseData(List<string> list)
-    //    {
-    //        this.list = list;
-    //    }
 
-    public List<string> DataAnalysis()
+    public List<Club> DataAnalysis()
     {
-        var result = new List<string>();
-        List<string> dummyData = Readfile.ReadFile();
-
-        foreach (var word in dummyData)
+        var result = new List<Club>();
+        List<string> data = Readfile.ReadFile();
+        foreach (var line in data)
         {
-            word.Split(',');
-            result.Add(word);
+            var splitted = line.Split(',');
+            var startNumber = splitted[0].Trim('"');
+            var name = splitted[1].Trim('"');
+            var club = splitted[2].Trim('"');
+            var nationality = splitted[3].Trim('"');
+            var group = splitted[4].Trim('"');
+            var @class = splitted[5].Trim('"');
+            if (string.IsNullOrEmpty(club)|| club == ".")
+            {
+                club = "Ingen Klubb";
+            }
+            var registration = new Registration(startNumber,name,club,nationality,@group,@class);
+            var clubs = result.FirstOrDefault(w => string.Equals(w.Name, club, StringComparison.CurrentCultureIgnoreCase)) ;
+            if (clubs == null)
+            {
+                clubs = new Club(club);
+                result.Add(clubs);
+            }
+            clubs.AddToClubList(registration);
         }
 
         return result;
     }
+
 }
 }
