@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ListLinqTasks
 {
-    class Club : IEnumerable
+    class Club 
     {
         public string Name { get; }
         public List<Registration> clubList { get; } = new List<Registration>();
@@ -22,10 +22,5 @@ namespace ListLinqTasks
             clubList.Add(clubNames);
         }
 
-
-        public IEnumerator GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

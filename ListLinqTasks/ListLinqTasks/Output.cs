@@ -22,10 +22,5 @@ namespace ListLinqTasks
             Console.WriteLine(something);
             Writer.WriteLine(something);
         }
-
-        public void WriteLine()
-        {
-            WriteLine(string.Empty);
-        }
     }
 }

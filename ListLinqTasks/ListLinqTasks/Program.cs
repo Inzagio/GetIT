@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 
 namespace ListLinqTasks
 {
@@ -8,29 +9,28 @@ namespace ListLinqTasks
         static void Main(string[] args)
         {
             var output = new Output("startlist.txt");
-            // var oldOut = Console.Out;
-            //  var writer = new StreamWriter("startlist.txt");
-            // Console.SetOut(writer);
             output.WriteLine("                         Startliste Ritt");
-            output.WriteLine();
+            output.WriteLine(string.Empty);
+            ShowData(output);
+        }
+
+        private static void ShowData(Output output)
+        {
             var data = new AnalyseData();
-            //var bigData = data.DataAnalysis().OrderByDescending(w => w.clubList.Count).ThenBy(w => w.Name);
             var bigData = from dataSet in data.DataAnalysis()
                           orderby dataSet.clubList.Count descending, dataSet.Name
                           select dataSet;
             foreach (var word in bigData)
             {
-                output.WriteLine($"Startnr  Navn            Klubb                             Klasse");
+                output.WriteLine($"StarNr  Navn            Klubb                             Klasse");
                 output.WriteLine("_____________________________________________________________________");
                 foreach (var c in word.clubList)
                 {
                     output.WriteLine(c.GetString());
                 }
                 output.WriteLine("_____________________________________________________________________");
-                output.WriteLine();
+                output.WriteLine(string.Empty);
             }
-            //Console.SetOut(oldOut);
-            //writer.Close();
         }
     }
 }
