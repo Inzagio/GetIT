@@ -7,12 +7,12 @@ namespace ListLinqTasks
 
         static void Main(string[] args)
         {
-            var Console = new Output("startlist.txt");
+            var output = new Output("startlist.txt");
             // var oldOut = Console.Out;
             //  var writer = new StreamWriter("startlist.txt");
             // Console.SetOut(writer);
-            Console.WriteLine("                         Startliste Ritt");
-            Console.WriteLine();
+            output.WriteLine("                         Startliste Ritt");
+            output.WriteLine();
             var data = new AnalyseData();
             //var bigData = data.DataAnalysis().OrderByDescending(w => w.clubList.Count).ThenBy(w => w.Name);
             var bigData = from dataSet in data.DataAnalysis()
@@ -20,14 +20,14 @@ namespace ListLinqTasks
                           select dataSet;
             foreach (var word in bigData)
             {
-                Console.WriteLine($"Startnr  Navn            Klubb                             Klasse");
-                Console.WriteLine("_____________________________________________________________________");
+                output.WriteLine($"Startnr  Navn            Klubb                             Klasse");
+                output.WriteLine("_____________________________________________________________________");
                 foreach (var c in word.clubList)
                 {
-                    Console.WriteLine(c.GetString());
+                    output.WriteLine(c.GetString());
                 }
-                Console.WriteLine("_____________________________________________________________________");
-                Console.WriteLine();
+                output.WriteLine("_____________________________________________________________________");
+                output.WriteLine();
             }
             //Console.SetOut(oldOut);
             //writer.Close();
