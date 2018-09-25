@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 namespace ListLinqTasks
 {
@@ -18,13 +17,13 @@ namespace ListLinqTasks
         {
             var data = new AnalyseData();
             var bigData = from dataSet in data.DataAnalysis()
-                          orderby dataSet.clubList.Count descending, dataSet.Name
+                          orderby dataSet.ClubList.Count descending, dataSet.Name
                           select dataSet;
             foreach (var word in bigData)
             {
                 output.WriteLine($"StarNr  Navn            Klubb                             Klasse");
                 output.WriteLine("_____________________________________________________________________");
-                foreach (var c in word.clubList)
+                foreach (var c in word.ClubList)
                 {
                     output.WriteLine(c.GetString());
                 }
