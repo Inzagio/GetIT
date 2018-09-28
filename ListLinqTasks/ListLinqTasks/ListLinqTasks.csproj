@@ -44,9 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnalyseData.cs" />
+    <Compile Include="Club.cs" />
+    <Compile Include="Output.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Readfile.cs" />
+    <Compile Include="Registration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

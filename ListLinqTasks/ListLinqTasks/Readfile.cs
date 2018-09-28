@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ListLinqTasks
 {
@@ -15,14 +11,14 @@ namespace ListLinqTasks
             var filepath = @"..\..\Resources\startlist.csv";
             using (StreamReader reader = new StreamReader(filepath))
             {
-                string line;
+                string line = string.Empty;
+                reader.ReadLine();
                 while ((line = reader.ReadLine()) != null)
                 {
-                    line.Split(',');
                     list.Add(line);
                 }
             }
             return list;
         }
-    }
+    }  
 }
