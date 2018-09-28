@@ -1,0 +1,73 @@
+﻿<Window x:Class="Uploader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Uploader"
+        xmlns:cal="http://www.caliburnproject.org"
+        mc:Ignorable="d" FontSize="18" FontFamily="Segoe UI Light"
+        Title="VTS Login" Height="400" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <!-- 
+            Defintion er som array counting den første blir [0] osv 
+            Zero based counting
+            -->
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+      
+        <TextBlock Grid.Column="1" Grid.Row="1" 
+                   Text="VTS Login" FontSize="26" Grid.ColumnSpan="2" Margin="0,0,0,5"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="2" 
+                   FontWeight="SemiBold" Text="Input username: "/>
+
+        <TextBlock Grid.Column="1" Grid.Row="3" 
+                   FontWeight="SemiBold" Text="Input password: "/>
+
+        <TextBox x:Name="InputUserNameText" Grid.Column="2" Grid.Row="2" 
+                 Width="150" Margin="0,0,0,4"/>
+
+        <PasswordBox x:Name="InputPassword" 
+                     Grid.Column="2" Grid.Row="3" Width="150" Margin="0,4,0,0"/>
+
+        <ComboBox x:Name="MyComboBox" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,4,0,4">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="C:\Users\chill\Downloads\radar.png" Height="20" Width="20"/>
+                        <TextBlock Text="{Binding AreaName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <Button x:Name="SubmitButton" Content="Submit" Grid.Column="2" 
+                Grid.Row="5" Margin="20,4,20,4" Click="submitButton_Click"/>
+
+        <Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" Margin="10" Source="C:\Users\chill\Downloads\kbgSmall.jpg"/>
+        <!--<TextBlock Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="4" 
+                   Text="24-hour phone: +47 33 08 48 85" TextAlignment="Center"/>-->
+
+        <StackPanel  Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="4"  Orientation="Horizontal" >
+            <TextBlock></TextBlock>
+        </StackPanel>
+
+    </Grid>
+</Window>
