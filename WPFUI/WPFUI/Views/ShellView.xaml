@@ -4,9 +4,47 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUI.Views"
-        mc:Ignorable="d"
-        Title="ShellView" Height="450" Width="800">
+        mc:Ignorable="d" FontSize="18"
+        Title="ShellView" Height="550" Width="500" WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
         
+        <!-- Row 1 -->
+        <TextBlock Text="{Binding Path=FullName, Mode=OneWay}" 
+                   Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"></TextBlock>
+        <!-- Row 2 -->
+        <TextBox x:Name="FirstName" Grid.Row="2" Grid.Column="1" MinWidth="100" Margin="5"></TextBox>
+      
+        <TextBox x:Name="LastName" Grid.Row="2" Grid.Column="2" MinWidth="100" Margin="5"></TextBox>
+        
+        <!-- Row 3 -->
+        <ComboBox Grid.Row="3" Grid.Column="1" x:Name="People" Margin="0,5,0,5"
+                  SelectedItem="{Binding Path=SelectedPerson, Mode=OneWayToSource}"
+                  DisplayMemberPath="FirstName"/>
+        <TextBlock Grid.Row="3" Grid.Column="2" x:Name="SelectedPerson_LastName" Margin="5,0,5,0"></TextBlock>
+        <!-- Row 4 -->
+        <Button x:Name="ClearText" Grid.Row="4" Grid.Column="1">Clear Text</Button>
+
+        <!-- Row 5 -->
+        <ContentControl Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Margin="0,5,0,5" 
+                        x:Name="ActiveItem"/>
     </Grid>
 </Window>
