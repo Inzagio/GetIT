@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUI.Views"
-        mc:Ignorable="d" FontSize="18"
+        mc:Ignorable="d" FontSize="18" Foreground="White" Background="#333333"
         Title="ShellView" Height="550" Width="500" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -31,9 +31,9 @@
         <TextBlock Text="{Binding Path=FullName, Mode=OneWay}" 
                    Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"></TextBlock>
         <!-- Row 2 -->
-        <TextBox x:Name="FirstName" Grid.Row="2" Grid.Column="1" MinWidth="100" Margin="5"></TextBox>
-      
-        <TextBox x:Name="LastName" Grid.Row="2" Grid.Column="2" MinWidth="100" Margin="5"></TextBox>
+        <TextBox x:Name="FirstName" Grid.Row="2" Grid.Column="1" MinWidth="100" Margin="5" Background="#333333"></TextBox>
+
+        <TextBox x:Name="LastName" Grid.Row="2" Grid.Column="2" MinWidth="100" Margin="5" Background="#333333"></TextBox>
         
         <!-- Row 3 -->
         <ComboBox Grid.Row="3" Grid.Column="1" x:Name="People" Margin="0,5,0,5"
@@ -41,10 +41,15 @@
                   DisplayMemberPath="FirstName"/>
         <TextBlock Grid.Row="3" Grid.Column="2" x:Name="SelectedPerson_LastName" Margin="5,0,5,0"></TextBlock>
         <!-- Row 4 -->
-        <Button x:Name="ClearText" Grid.Row="4" Grid.Column="1">Clear Text</Button>
+        <Button x:Name="ClearText" Grid.Row="4" Grid.Column="1" Content="Clear Text"/>
 
         <!-- Row 5 -->
-        <ContentControl Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="5" Margin="0,5,0,5" 
+        <Button x:Name="LoadPageOne" Grid.Row="5" Grid.Column="1" Margin="0,5,0,5" Content="Load First Page"/>
+        <Button x:Name="LoadPageTwo" Grid.Row="5" Grid.Column="2" Margin="5,5,5,5" Content="Load Second Page"/>
+        
+        <!-- Row 6 -->
+        <ContentControl Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="5" Margin="0,5,0,5" 
                         x:Name="ActiveItem"/>
+
     </Grid>
 </Window>

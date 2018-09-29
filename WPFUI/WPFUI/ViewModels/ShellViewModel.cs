@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using Caliburn.Micro;
 using WPFUI.Models;
 
@@ -70,7 +69,12 @@ namespace WPFUI.ViewModels
 
         public void LoadPageOne()
         {
-            //ActivateItem();
+            ActivateItem(new FirstChildViewModel());
+        }
+
+        public void LoadPageTwo()
+        {
+            ActivateItem(new SecondChildViewModel());
         }
     }
 }
