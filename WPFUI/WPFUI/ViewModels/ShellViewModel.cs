@@ -6,7 +6,7 @@ namespace WPFUI.ViewModels
 {
    [SuppressMessage("ReSharper", "UnusedMember.Global")]
    public class ShellViewModel : Conductor<object>
-    {
+    { 
         private string _firstName = "Trym";
         private string _lastName;
         private PersonModel _selectedPerson;
