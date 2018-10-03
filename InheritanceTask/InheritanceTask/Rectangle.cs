@@ -16,8 +16,8 @@ namespace InheritanceTask
         public Rectangle(Random random, int maxX, int maxY) : base(random)
         {
             X = random.Next(0, maxX - _minimumSize);
-            Y = random.Next(0, maxY - _minimumSize); ;
-            Width = random.Next(_minimumSize, maxX - X); ;
+            Y = random.Next(0, maxY - _minimumSize); 
+            Width = random.Next(_minimumSize, maxX - X); 
             Height = random.Next(_minimumSize, maxY - Y);
         } 
 

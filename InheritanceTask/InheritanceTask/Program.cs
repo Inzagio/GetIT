@@ -12,7 +12,7 @@ namespace InheritanceTask
         {
             var shapes = CreateShapes();
             var n = 5;
-            while (n-- > 0)
+            //while (n-- > 0)
             {
                 Show(shapes);
                 foreach (var shape in shapes)
@@ -20,22 +20,23 @@ namespace InheritanceTask
                     shape.Move();
                 }
 
-                Thread.Sleep(300);
+               // Thread.Sleep(300);
             }
         }
 
         private static Shape[] CreateShapes()
         {
             var random = new Random();
-            var shapes = new Shape[5];
+            var shapes = new Shape[1];
             for (var i = 0; i < shapes.Length; i++)
             {
+                    shapes[i] = new Text(0,1);
                 if (random.Next(0, 2) == 0)
                 {
                     shapes[i] = new Rectangle(random, _width, _height);
                 }
-                else
-                    shapes[i] = new Triangle(random, _height );
+                //else
+                //    shapes[i] = new Triangle(random, _height);
             }
             return shapes;
         }
