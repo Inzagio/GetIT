@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ListLinqTasks
 {
     class Club 
     {
         public string Name { get; }
-        public List<Registration> clubList { get; } = new List<Registration>();
+        public List<Registration> ClubList { get; } = new List<Registration>();
 
         public Club(string name)
         {
@@ -19,7 +14,7 @@ namespace ListLinqTasks
 
         public void AddToClubList(Registration clubNames)
         {
-            clubList.Add(clubNames);
+            ClubList.Add(clubNames);
         }
 
     }
