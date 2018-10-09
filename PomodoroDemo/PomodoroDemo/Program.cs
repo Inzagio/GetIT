@@ -14,7 +14,7 @@ namespace PomodoroDemo
             var program = new Program();
             Console.ReadLine();
         }
-
+         
         public Program()
         {
             var pomodoroTimer = new Pomodoro(this, 20);

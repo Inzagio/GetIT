@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{017B2653-4AD7-4CA4-A9CB-0D371E2FE238}</ProjectGuid>
+    <ProjectGuid>{B4E01167-9986-4A7F-9E15-DC5240BB39E4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>PomodoroDemo</RootNamespace>
-    <AssemblyName>PomodoroDemo</AssemblyName>
+    <RootNamespace>LectureTemplateMethod</RootNamespace>
+    <AssemblyName>LectureTemplateMethod</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PomodoroEngine">
-      <HintPath>.\PomodoroEngine.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,11 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BakeInOvenTreatment.cs" />
+    <Compile Include="Cake.cs" />
+    <Compile Include="ChocolateCake.cs" />
+    <Compile Include="Treatment.cs" />
+    <Compile Include="Dinner.cs" />
+    <Compile Include="Food.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

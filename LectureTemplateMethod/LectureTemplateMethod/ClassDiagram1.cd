@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LectureTemplateMethod.BakeInOvenTreatment" Collapsed="true">
+    <Position X="9.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BakeInOvenTreatment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LectureTemplateMethod.Food" Collapsed="true">
+    <Position X="6.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAACAAgAAAAAAgAAAYAACgAAAAAAIAAAA=</HashCode>
+      <FileName>Food.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LectureTemplateMethod.Program" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LectureTemplateMethod.Treatment" Collapsed="true">
+    <Position X="9.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Treatment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LectureTemplateMethod.Dinner" Collapsed="true">
+    <Position X="4.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dinner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LectureTemplateMethod.Cake" Collapsed="true">
+    <Position X="6.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cake.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LectureTemplateMethod.ChocolateCake" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAACAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>ChocolateCake.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

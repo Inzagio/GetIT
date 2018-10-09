@@ -4,6 +4,9 @@ namespace InheritanceTask
 {
     class Text : Shape
     {
+        private string _text = "Hurra!";
+        private int _minimumSize = 1;
+
 
         public Text(int x, int y)
         {
@@ -11,15 +14,18 @@ namespace InheritanceTask
             Y = y;
         }
 
-        public Text(Random random) : base(random)
+        public Text(Random random, int maxX, int maxY) : base(random)
         {
-            DirectionX = random.Next(0, 1);
-            DirectionY = random.Next(0, 1);
+            X = random.Next(0, maxX - _minimumSize);
+            Y = random.Next(0, maxY - _minimumSize);
         }
 
         public override string GetCharacter(int row, int col)
         {
-            return "Hurra!";
+            if (row != Y) return null;
+            if (col < X || col >= X + _text.Length) return null;
+            var index = col - X;
+            return _text.Substring(index, 1);
         }
 
     }

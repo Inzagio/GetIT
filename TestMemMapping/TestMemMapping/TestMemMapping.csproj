@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{017B2653-4AD7-4CA4-A9CB-0D371E2FE238}</ProjectGuid>
+    <ProjectGuid>{E5555AF0-4B19-483B-8E97-F9A6B97E694D}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>PomodoroDemo</RootNamespace>
-    <AssemblyName>PomodoroDemo</AssemblyName>
+    <RootNamespace>TestMemMapping</RootNamespace>
+    <AssemblyName>TestMemMapping</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PomodoroEngine">
-      <HintPath>.\PomodoroEngine.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
