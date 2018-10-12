@@ -14,9 +14,9 @@ namespace WPFUI.ViewModels
 
         public ShellViewModel()
         {
-            People.Add( new PersonModel {FirstName = "Trym", LastName = "Bjørnvik"});
-            People.Add( new PersonModel {FirstName = "Viljar", LastName = "Bjørnvik"});
-            People.Add( new PersonModel {FirstName = "Anita", LastName = "Bjørnvik"});
+            People.Add( new PersonModel {FirstName = "Trym", LastName = "Test"});
+            People.Add( new PersonModel {FirstName = "test", LastName = "Testesen"});
+            People.Add( new PersonModel {FirstName = "Virkelig", LastName = "TEst"});
         }
 
         public string FirstName

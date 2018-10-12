@@ -11,7 +11,7 @@ namespace InheritanceTask
         static void Main(string[] args)
         {
             var shapes = CreateShapes();
-            var n = 5;
+            var n = 10;
             //while (n-- > 0)
             {
                 Show(shapes);
@@ -19,24 +19,22 @@ namespace InheritanceTask
                 {
                     shape.Move();
                 }
-
-               // Thread.Sleep(300);
+                Thread.Sleep(300);
             }
         }
 
         private static Shape[] CreateShapes()
         {
             var random = new Random();
-            var shapes = new Shape[1];
-            for (var i = 0; i < shapes.Length; i++)
+            var shapes = new Shape[10];
+            shapes[0] = new Text(random, _width, _height);
+            for (var i = 1; i < shapes.Length; i++)
             {
-                    shapes[i] = new Text(0,1);
-                if (random.Next(0, 2) == 0)
-                {
+                var shapeInt = random.Next(0, 2);
+                if (shapeInt == 0)
                     shapes[i] = new Rectangle(random, _width, _height);
-                }
-                //else
-                //    shapes[i] = new Triangle(random, _height);
+                else if (shapeInt == 1)
+                    shapes[i] = new Triangle(random, _height);
             }
             return shapes;
         }
@@ -46,8 +44,10 @@ namespace InheritanceTask
             Console.Clear();
             for (var row = 0; row < _height; row++)
             {
+                Console.CursorTop = row;
                 for (var col = 0; col < _width; col++)
                 {
+                    Console.CursorLeft = col;
                     var hasFoundCharacterToPrint = false;
                     foreach (var shape in shapes)
                     {

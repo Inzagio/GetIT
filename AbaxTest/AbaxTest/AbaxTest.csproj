@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{017B2653-4AD7-4CA4-A9CB-0D371E2FE238}</ProjectGuid>
+    <ProjectGuid>{D6C25FFD-0D98-42EB-A668-4FD02CAAF8FA}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>PomodoroDemo</RootNamespace>
-    <AssemblyName>PomodoroDemo</AssemblyName>
+    <RootNamespace>AbaxTest</RootNamespace>
+    <AssemblyName>AbaxTest</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PomodoroEngine">
-      <HintPath>.\PomodoroEngine.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,11 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Boat.cs" />
+    <Compile Include="Model\Car.cs" />
+    <Compile Include="Model\Jetplane.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vehicle.cs" />
+    <Compile Include="VehicleType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
