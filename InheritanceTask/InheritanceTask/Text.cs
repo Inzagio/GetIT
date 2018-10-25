@@ -4,8 +4,8 @@ namespace InheritanceTask
 {
     class Text : Shape
     {
-        private string _text = "Hurra!";
-        private int _minimumSize = 1;
+        private string _text = "Hurra!!!!!";
+        //private int _minimumSize = 1;
 
 
         public Text(int x, int y)
@@ -16,8 +16,8 @@ namespace InheritanceTask
 
         public Text(Random random, int maxX, int maxY) : base(random)
         {
-            X = random.Next(0, maxX - _minimumSize);
-            Y = random.Next(0, maxY - _minimumSize);
+            X = random.Next(0, maxX);
+            Y = random.Next(0, maxY);
         }
 
         public override string GetCharacter(int row, int col)
