@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Markup;
 
 namespace WpfApp1
 {
@@ -23,6 +15,27 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public void TestThis()
+        {
+            string hei = DoSomething.GenerateMarkUp.XmlMarkup(4, 5);
+
+            var test = (UIElement) XamlReader.Parse(hei);
+            this.TestGrid.Children.Add(test);
+        }
+
+        public void SaveFile()
+        {
+            List xamlItems = new List();
+            var path = Assembly.GetExecutingAssembly().ToString();
+            using (StreamWriter write = new StreamWriter(path))
+            {
+                foreach (var item in )
+                {
+                    
+                }
+            }
         }
     }
 }

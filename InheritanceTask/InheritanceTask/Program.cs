@@ -12,7 +12,7 @@ namespace InheritanceTask
         {
             var shapes = CreateShapes();
             var n = 10;
-            //while (n-- > 0)
+            while (n-- > 0)
             {
                 Show(shapes);
                 foreach (var shape in shapes)
